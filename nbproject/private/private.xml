@@ -3,11 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/aland/Downloads/3-ATIVIDADE_2_FINAL_LNPG/src/interfaces/ListarDentista.java</file>
-            <file>file:/C:/Users/aland/Downloads/3-ATIVIDADE_2_FINAL_LNPG/src/controle/ControleDentista.java</file>
-            <file>file:/C:/Users/aland/Downloads/3-ATIVIDADE_2_FINAL_LNPG/src/modelo/Dentista.java</file>
-            <file>file:/C:/Users/aland/Downloads/3-ATIVIDADE_2_FINAL_LNPG/src/interfaces/EditarDentista.java</file>
-            <file>file:/C:/Users/aland/Downloads/3-ATIVIDADE_2_FINAL_LNPG/src/interfaces/AgendamentoMedico.java</file>
+            <file>file:/C:/Users/aland/Documents/projeto_ifal_java/src/interfaces/Agenda.java</file>
+            <file>file:/C:/Users/aland/Documents/projeto_ifal_java/src/interfaces/AgendamentoMedico.java</file>
+            <file>file:/C:/Users/aland/Documents/projeto_ifal_java/src/interfaces/Agendamento_dentista.java</file>
+            <file>file:/C:/Users/aland/Documents/projeto_ifal_java/src/interfaces/AgendamentoDentista.java</file>
+            <file>file:/C:/Users/aland/Documents/projeto_ifal_java/src/interfaces/DentistaScreen.java</file>
+            <file>file:/C:/Users/aland/Documents/projeto_ifal_java/src/interfaces/MedicoScreen.java</file>
         </group>
     </open-files>
 </project-private>

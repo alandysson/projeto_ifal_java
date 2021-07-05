@@ -49,7 +49,6 @@ public class PacienteScreen extends javax.swing.JFrame {
         Voltar_2 = new javax.swing.JButton();
         Salvar_2 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -110,7 +109,6 @@ public class PacienteScreen extends javax.swing.JFrame {
 
         CpfPaciente.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
 
-        Voltar_2.setBackground(new java.awt.Color(0, 153, 255));
         Voltar_2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         Voltar_2.setText("Voltar");
         Voltar_2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -119,8 +117,12 @@ public class PacienteScreen extends javax.swing.JFrame {
                 Voltar_2MouseClicked(evt);
             }
         });
+        Voltar_2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Voltar_2ActionPerformed(evt);
+            }
+        });
 
-        Salvar_2.setBackground(new java.awt.Color(51, 255, 51));
         Salvar_2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         Salvar_2.setText("Salvar");
         Salvar_2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -133,13 +135,6 @@ public class PacienteScreen extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Cadastro de Cliente");
-
-        jButton1.setText("Buscar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -160,19 +155,14 @@ public class PacienteScreen extends javax.swing.JFrame {
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(TelefonePaciente)
-                                            .addComponent(ComplementoTextField))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Bairro)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(BairroTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(Cep))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(0, 0, Short.MAX_VALUE)
-                                        .addComponent(jButton1)))
+                                    .addComponent(TelefonePaciente)
+                                    .addComponent(ComplementoTextField))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Bairro)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(BairroTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(Cep)
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addGroup(layout.createSequentialGroup()
@@ -261,9 +251,8 @@ public class PacienteScreen extends javax.swing.JFrame {
                 .addGap(35, 35, 35)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Voltar_2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Salvar_2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(75, 75, 75))
+                    .addComponent(Salvar_2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(76, 76, 76))
         );
 
         setSize(new java.awt.Dimension(864, 534));
@@ -297,13 +286,11 @@ public class PacienteScreen extends javax.swing.JFrame {
         controlePaciente.listarPacientes();
     }//GEN-LAST:event_Voltar_2MouseClicked
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        modeloPaciente.setPesquisa(Integer.parseInt(CpfPaciente.getText()));
-        Paciente model = controlePaciente.buscarPaciente(modeloPaciente);
-        System.out.println(model.getCpf());
-        NomePaciente.setText(model.getNome());
-        CpfPaciente.setText(String.valueOf(model.getCpf()));
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void Voltar_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Voltar_2ActionPerformed
+        PainelInicial panInitial = new PainelInicial();
+        panInitial.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_Voltar_2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -367,7 +354,6 @@ public class PacienteScreen extends javax.swing.JFrame {
     private javax.swing.JLabel Telefone;
     private javax.swing.JTextField TelefonePaciente;
     private javax.swing.JButton Voltar_2;
-    private javax.swing.JButton jButton1;
     private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

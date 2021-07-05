@@ -112,6 +112,11 @@ public class MedicoScreen extends javax.swing.JFrame {
         Voltar_2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         Voltar_2.setText("Voltar");
         Voltar_2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        Voltar_2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Voltar_2ActionPerformed(evt);
+            }
+        });
 
         Salvar_2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         Salvar_2.setText("Cadastrar");
@@ -169,15 +174,15 @@ public class MedicoScreen extends javax.swing.JFrame {
                                         .addComponent(crmTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(0, 0, Short.MAX_VALUE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(Voltar_2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(Salvar_2, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(Cep)
                                         .addGap(18, 18, 18)
-                                        .addComponent(cepTextField)))
+                                        .addComponent(cepTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(Voltar_2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(Salvar_2, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(70, 70, 70))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(emailTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 326, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -275,10 +280,12 @@ public class MedicoScreen extends javax.swing.JFrame {
                     .addComponent(especialidadeBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3)
                     .addComponent(crmTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Voltar_2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Salvar_2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Especialidade))
-                .addGap(140, 140, 140))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Voltar_2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Salvar_2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(103, 103, 103))
         );
 
         setSize(new java.awt.Dimension(883, 582));
@@ -302,6 +309,12 @@ public class MedicoScreen extends javax.swing.JFrame {
         modMedico.setCrm(Integer.parseInt(crmTextField.getText()));
         controllMedico.salvar(modMedico);
     }//GEN-LAST:event_Salvar_2ActionPerformed
+
+    private void Voltar_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Voltar_2ActionPerformed
+        PainelInicial panInitial = new PainelInicial();
+        panInitial.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_Voltar_2ActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

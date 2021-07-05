@@ -116,6 +116,11 @@ public class AgendamentoDentista extends javax.swing.JFrame {
         jComboBoxDentistas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jButton4.setText("Cancelar");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         jButton5.setText("Marcar");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -254,6 +259,12 @@ public class AgendamentoDentista extends javax.swing.JFrame {
             System.out.println(ex);
         }
     }//GEN-LAST:event_TabelaPacienteMouseClicked
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        PainelInicial panInitial = new PainelInicial();
+        panInitial.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
